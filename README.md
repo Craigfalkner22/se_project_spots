@@ -15,4 +15,8 @@ tablet resolution[https://drive.google.com/file/d/1Ep555k2bGSXovrdBlbcT9-9QTj5LA
 
 phone resolution[https://drive.google.com/file/d/1zkbxTpfOtIVyoJEIwF7kEuIolPg3JW7a/view?usp=sharing]
 
-### Git hub link [
+### Git hub link [https://github.com/Craigfalkner22/se_project_spots.git]
+
+
+#### Video for project-3
+[https://drive.google.com/file/d/1Zb4yN_NQeMs-__7KpsdcAY-KQq7YwqN9/view?usp=sharing]
