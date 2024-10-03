@@ -1,21 +1,16 @@
-# Project 3: Spots
+# Spots - Project 3(responsive webpage)
 
-### Overview  
+Spots is a project on resposive webpage design. The webpage that I have created will appeal to all users either on mobile devices or on a computer desktop. The web page will change depending on the screen resolution and will appeal for that resolution.
 
-* Intro  
-* Figma  
-* Images  
-  
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+## Technologies used
+
+The technologies i used for this consist of HTML and CSS to build a responsive web page. The web page will adjust to various screen sizes including desktop computers and mobile devices. 
+
+
+### Images of the responsive webpage
+
+desktop resolutionp[se_project_spots\images\Screenshot 2024-10-03 160010.png]
+
+tablet resolution[se_project_spots\images\Screenshot 2024-10-03 160052.png]
+
+phone resolution[se_project_spots\images\Screenshot 2024-10-03 160102.png]
