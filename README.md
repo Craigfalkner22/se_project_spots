@@ -9,8 +9,10 @@ The technologies i used for this consist of HTML and CSS to build a responsive w
 
 ### Images of the responsive webpage
 
-desktop resolutionp[se_project_spots\images\Screenshot 2024-10-03 160010.png]
+desktop resolutionp[https://drive.google.com/file/d/1Ag5PoFjwiBB2kpK2sCvX_sYLhD1ejm8B/view?usp=sharing]
 
-tablet resolution[se_project_spots\images\Screenshot 2024-10-03 160052.png]
+tablet resolution[https://drive.google.com/file/d/1Ep555k2bGSXovrdBlbcT9-9QTj5LArC2/view?usp=sharing]
 
-phone resolution[se_project_spots\images\Screenshot 2024-10-03 160102.png]
+phone resolution[https://drive.google.com/file/d/1zkbxTpfOtIVyoJEIwF7kEuIolPg3JW7a/view?usp=sharing]
+
+### Git hub link [
