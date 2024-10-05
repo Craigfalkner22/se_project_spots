@@ -17,7 +17,7 @@ phone resolution[https://drive.google.com/file/d/1zkbxTpfOtIVyoJEIwF7kEuIolPg3JW
 
 ## Github deployment
 
- Git hub link [https://github.com/Craigfalkner22/se_project_spots.git]
+ Git hub link [https://craigfalkner22.github.io/se_project_spots/]gitr
 
 
 #### Video for project-3
