@@ -1,11 +1,14 @@
-.footer__container{
-display: flex;
-justify-content: center;
-padding: 0 0 60px;
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-.footer__copyright{
-opacity: 70%;
-
+.footer__copyright {
+  opacity: 70%;
+  margin: 60px 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+  color: #212121;
 }
