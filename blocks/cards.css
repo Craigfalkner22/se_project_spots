@@ -13,7 +13,6 @@
   .cards__list {
     grid-template-columns: repeat(auto-fit, 288px);
     max-width: 288px;
-    margin: 0;
     gap: 0px
   }
 }
