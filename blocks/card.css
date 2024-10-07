@@ -4,6 +4,7 @@
   object-fit: cover;
   display: block;
   border-radius: 8px;
+  margin-bottom: 12px;
 }
 
 .card__title {
@@ -17,6 +18,7 @@
   max-width: 353px;
   color: #212121;
 }
+
 
 .card__like-button {
   background-image: url(../images/Like-button.svg);
@@ -38,6 +40,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 36px;
 }
 
 @media screen and (max-width: 627px) {
