@@ -116,6 +116,35 @@
       <footer class="footer">
         <p class="footer__copyright">2024 &copy; Spots</p>
       </footer>
+      <div class="modal modal_opened">
+        <div class="modal__container">
+          <h2 class="modal__title">
+            Edit profile
+            <button type="submit" class="modal__close-button"></button>
+          </h2>
+          <form name="edit-profile" class="modal__form">
+            <label class="modal__label" for="Name"
+              >Name
+              <input
+                id="Name"
+                type="text"
+                class="modal__input"
+                placeholder=" Type your name"
+              />
+            </label>
+            <label class="modal__label" for="Description"
+              >Description
+              <input
+                id="Description"
+                type="text"
+                class="modal__input"
+                placeholder=" Describe yourself"
+              />
+            </label>
+            <button type="submit" class="modal__submit-button">Save</button>
+          </form>
+        </div>
+      </div>
     </div>
     <script src="./scripts/index.js"></script>
   </body>
