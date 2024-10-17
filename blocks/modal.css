@@ -39,6 +39,11 @@
   border: none;
   background-color: transparent;
   opacity: 40%;
+  cursor: pointer;
+}
+
+.modal__close-button:hover{
+  opacity: 1;
 }
 
 .modal__title {
@@ -114,8 +119,10 @@
 
   .modal__close-button {
     top: 12px;
-    position: static;
+    right: 12px;
   }
+
+
 
   .modal__form {
     gap: 0;
