@@ -23,14 +23,8 @@
             class="profile__avatar"
           />
           <div class="profile__column">
-            <h1 class="profile__name">
-              Aliaune Damala Bouga Time Bongo Puru Nacka Lu Lu Lu Badara Akon...
-            </h1>
-            <p class="profile__description">
-              Known mononymously as Akon (/ˈeɪkɒn/), is a Senegalese-American
-              singer, record producer, and entrepreneur. An influential figure
-              in modern world...
-            </p>
+            <h1 class="profile__name">Bessie Coleman</h1>
+            <p class="profile__description">Civil Aviator</p>
             <button type="button" class="profile__edit-btn">
               <img src="./images/pencil.svg.svg" alt="Pencil edit icon" />Edit
               profile
@@ -41,76 +35,7 @@
           </button>
         </section>
         <section class="cards page__section">
-          <ul class="cards__list">
-            <li class="card">
-              <img
-                src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
-                alt="Val Thorens"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Val Thorens</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/2-photo-by-ceiline-from-pexels.jpg"
-                alt="Resturant terrace"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Resturant terrace</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg"
-                alt="Outdoor cafe"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">An outdoor cafe</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/4-photo-by-maurice-laschet-from-pexels.jpg"
-                alt="Val Thorens"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">
-                  A very long bridge, over the forest with a very nice veiw
-                </h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
-                alt="Val Thorens"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Tunnel with morning light</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
-                alt="Val Thorens"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Mountain house</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-          </ul>
+          <ul class="cards__list"></ul>
         </section>
       </main>
       <footer class="footer">
@@ -121,19 +46,19 @@
           <h2 class="modal__title">Edit profile</h2>
           <button type="button" class="modal__close-button"></button>
           <form name="edit-profile" class="modal__form">
-            <label class="modal__label" for="Name"
+            <label class="modal__label" for="profile-name-input"
               >Name
               <input
-                id="Name"
+                id="profile-name-input"
                 type="text"
                 class="modal__input"
                 placeholder=" Type your name"
               />
             </label>
-            <label class="modal__label" for="Description"
+            <label class="modal__label" for="profile-description-input"
               >Description
               <input
-                id="Description"
+                id="profile-description-input"
                 type="text"
                 class="modal__input"
                 placeholder=" Describe yourself"
@@ -144,6 +69,17 @@
         </div>
       </div>
     </div>
+
+    <template id="card-template">
+      <li class="card">
+        <img src="" alt="" class="card__image" />
+        <div class="card__content">
+          <h2 class="card__title"></h2>
+          <button type="button" class="card__like-button"></button>
+        </div>
+      </li>
+    </template>
+
     <script src="./scripts/index.js"></script>
   </body>
 </html>
