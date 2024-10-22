@@ -48,11 +48,11 @@ const cardList = document.querySelector(".cards__list");
 function openModal() {
   editInputName.value = profileName.textContent;
   editInputDescription.value = profileDescription.textContent;
-  editProfileModal.classList.add("modal__opened");
+  editProfileModal.classList.add("modal_opened");
 }
 
 function closeModal() {
-  editProfileModal.classList.remove("modal__opened");
+  editProfileModal.classList.remove("modal_opened");
 }
 
 function handleProflieFormSubmit(e) {
