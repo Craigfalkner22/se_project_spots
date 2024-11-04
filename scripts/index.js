@@ -82,6 +82,8 @@ function handleAddCardSumbit(e) {
   const cardElement = getCardElement(inputValues);
   cardList.prepend(cardElement);
   closeModal(cardModal);
+  cardNameInput.value = "";
+  cardLinkInput.value = "";
 }
 
 function getCardElement(data) {
@@ -99,13 +101,13 @@ function getCardElement(data) {
   });
 
   cardDeleteButton.addEventListener("click", () => {
-    cardElement.remove("card-template");
+    cardElement.remove()
   });
 
   cardImg.addEventListener("click", () => {
     openModal(previewModal);
     previewModalImageEl.src = data.link;
-    previewModalCaptionEl.alt = data.name;
+    previewModalImageEl.alt = data.name;
     previewModalCaptionEl.textContent = data.name;
   });
 

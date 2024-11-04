@@ -10,10 +10,14 @@
   background-color: rgba(0, 0, 0, 0.5);
   visibility: hidden;
   padding: 0 16px;
+  opacity: 0;
+  transition: visibility 0s linear 0.5s,opacity 0.5s linear;
 }
 
 .modal_opened {
   visibility: visible;
+  opacity:1;
+  transition-delay:0s;
 }
 
 .modal__container {
@@ -38,9 +42,9 @@
 .modal__img {
   object-fit: cover;
   border-radius: 8px;
+  width: 100%;
   max-width: 80vw;
   max-height: 80vh;
-  width: 100%;
 }
 
 .modal__close-button {
@@ -188,6 +192,14 @@
 
   .modal__submit-button {
     width: 100%;
+  }
+
+  .modal__container_type_preview {
+    padding: 8px 6px;
+  }
+
+  .modal__img {
+    max-width: max-content;
   }
 
   .modal__close-button_modal_preview {
