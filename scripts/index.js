@@ -61,6 +61,7 @@ const previweModalCloseButton = previewModal.querySelector(
   ".modal__close-button"
 );
 
+
 function openModal(modal) {
   modal.classList.add("modal_opened");
 }
@@ -81,9 +82,10 @@ function handleAddCardSumbit(e) {
   const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
   const cardElement = getCardElement(inputValues);
   cardList.prepend(cardElement);
-  closeModal(cardModal);
   cardNameInput.value = "";
   cardLinkInput.value = "";
+   closeModal(cardModal);
+   disableButton(submitModalButton, settings)
 }
 
 function getCardElement(data) {
@@ -101,7 +103,7 @@ function getCardElement(data) {
   });
 
   cardDeleteButton.addEventListener("click", () => {
-    cardElement.remove()
+    cardElement.remove();
   });
 
   cardImg.addEventListener("click", () => {
@@ -147,3 +149,4 @@ initialCards.forEach((item) => {
   const cardElement = getCardElement(item);
   cardList.append(cardElement);
 });
+
