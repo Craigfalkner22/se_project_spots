@@ -88,21 +88,19 @@ const disableButton = (cardModalButton) => {
 };
 
 function handleProflieFormSubmit(evt) {
-  e.preventDefault();
+  evt.preventDefault();
   profileName.textContent = editInputName.value;
   profileDescription.textContent = editInputDescription.value;
-  closeModal(editProfileModal);
-
+  closeModal(evt, editProfileModal);
 }
 
-function handleAddCardSumbit(e) {
-  e.preventDefault();
+function handleAddCardSumbit(evt) {
+  evt.preventDefault();
   const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
   const cardElement = getCardElement(inputValues);
   cardList.prepend(cardElement);
-  cardNameInput.value = "";
-  cardLinkInput.value = "";
-  closeModal(e, cardModal);
+  evt.target.reset()
+  closeModal(evt, cardModal);
   disableButton(addCardSubmitButton);
 }
 
@@ -157,10 +155,14 @@ cardModalCloseButton.addEventListener("click", (evt) => {
 });
 
 previweModalCloseButton.addEventListener("click", () => {
-  closeModal(previewModal);
+  closeModal(close, previewModal);
 });
 
-editProfileModal.addEventListener("submit", handleProflieFormSubmit);
+editProfileModal.addEventListener("submit", (evt) =>{
+evt.preventDefault()
+handleProflieFormSubmit(evt);
+});
+
 cardForm.addEventListener("submit", handleAddCardSumbit);
 
 initialCards.forEach((item) => {
