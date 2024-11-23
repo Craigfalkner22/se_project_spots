@@ -63,28 +63,27 @@ const addCardSubmitButton = cardModal.querySelector("#add-card-btn");
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
-  document.addEventListener("keydown", (evt) => closeModalKey(evt, modal));
-  document.addEventListener("click", (evt) => closeModalOverlay(evt, modal));
+  document.addEventListener("keydown", closeModalKey);
+  modal.addEventListener("click", closeModalOverlay);
 }
-function closeModal(evt, modal) {
+
+function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", closeModalKey);
+  modal.removeEventListener("click", closeModalOverlay);
 }
 
-const closeModalKey = (evt, modal) => {
+const closeModalKey = (evt) => {
   if (evt.key === "Escape") {
-    closeModal(evt, modal);
-  }
+    const openedModalEl = document.querySelector(".modal_opened");
+    closeModal(openedModalEl);
+  };
 };
 
-const closeModalOverlay = (evt, cardModal) => {
-  if (evt.target === cardModal) {
-    closeModal(evt, cardModal);
+const closeModalOverlay = (evt) => {
+  if (evt.target && evt.target.classList.contains("modal_opened")) {
+    closeModal(evt.target);
   }
-};
-
-const disableButton = (cardModalButton) => {
-  cardModalButton.disabled = true;
-  addCardSubmitButton.classList.add("modal__submit-button_disabled");
 };
 
 function handleProflieFormSubmit(evt) {
@@ -99,8 +98,8 @@ function handleAddCardSumbit(evt) {
   const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
   const cardElement = getCardElement(inputValues);
   cardList.prepend(cardElement);
-  evt.target.reset()
-  closeModal(evt, cardModal);
+  evt.target.reset();
+  closeModal(cardModal);
   disableButton(addCardSubmitButton);
 }
 
@@ -139,29 +138,27 @@ function getCardElement(data) {
 profileEditButton.addEventListener("click", () => {
   editInputName.value = profileName.textContent;
   editInputDescription.value = profileDescription.textContent;
+  resetValidation(editProfileModal, [editInputName, editInputDescription], config);
   openModal(editProfileModal);
 });
 
-closeProfileButton.addEventListener("click", (evt) => {
-  closeModal(evt, editProfileModal);
+closeProfileButton.addEventListener("click", () => {
+  closeModal(editProfileModal);
 });
 
 cardModalButton.addEventListener("click", () => {
   openModal(cardModal);
 });
 
-cardModalCloseButton.addEventListener("click", (evt) => {
-  closeModal(evt, cardModal);
+cardModalCloseButton.addEventListener("click", () => {
+  closeModal(cardModal);
 });
 
 previweModalCloseButton.addEventListener("click", () => {
-  closeModal(close, previewModal);
+  closeModal(previewModal);
 });
 
-editProfileModal.addEventListener("submit", (evt) =>{
-evt.preventDefault()
-handleProflieFormSubmit(evt);
-});
+editFormElement.addEventListener("submit", handleProflieFormSubmit);
 
 cardForm.addEventListener("submit", handleAddCardSumbit);
 

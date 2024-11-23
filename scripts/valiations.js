@@ -1,33 +1,33 @@
-const settings = {
+const config = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-button",
-  inactiveButtonClass: "modal__submit-button_disabled",
-  inputErrorClass: "modal__input_error",
-  errorClass: "modal__error",
+  inactiveButtonClass: ".modal__submit-button_disabled",
+  inputErrorClass: ".modal__input_error",
+  errorClass: ".modal__error",
 };
 
 const showInputError = (formEl, inputElement, errorMsg, config) => {
   const errorMsgID = `#${inputElement.id}-error`;
-  const errorMsgEl = document.querySelector(errorMsgID);
+  const errorMsgEl = formEl.querySelector(errorMsgID);
   errorMsgEl.textContent = errorMsg;
-  inputElement.classList.add(settings.inputErrorClass);
-  errorMsgEl.classList.add(settings.errorClass);
+  inputElement.classList.add(config.inputErrorClass);
+  errorMsgEl.classList.add(config.errorClass);
 };
 
-const hideInputError = (formEl, inputElement, config,) => {
+const hideInputError = (formEl, inputElement, config) => {
   const errorMsgID = `#${inputElement.id}-error`;
-  const errorMsgEl = document.querySelector(errorMsgID);
+  const errorMsgEl = formEl.querySelector(errorMsgID);
+  inputElement.classList.remove(config.inputErrorClass);
+  errorMsgEl.classList.remove(config.errorClass);
   errorMsgEl.textContent = "";
-  inputElement.classList.remove(settings.inputErrorClass);
-  errorMsgEl.classList.remove(settings.errorClass);
 };
 
-const checkInputValidity = (formEl, inputElement) => {
+const checkInputValidity = (formEl, inputElement, config) => {
   if (!inputElement.validity.valid) {
-    showInputError(formEl, inputElement, inputElement.validationMessage);
+    showInputError(formEl, inputElement, inputElement.validationMessage, config);
   } else {
-    hideInputError(formEl, inputElement);
+    hideInputError(formEl, inputElement, config);
   }
 };
 
@@ -42,29 +42,34 @@ const toggleButtonState = (inputList, buttonElement, config) => {
 
   if (isInvalid) {
     buttonElement.disabled = true;
-    buttonElement.classList.add(settings.inactiveButtonClass);
+    buttonElement.classList.add(config.inactiveButtonClass);
   } else {
     buttonElement.disabled = false;
-    buttonElement.classList.remove(settings.inactiveButtonClass);
+    buttonElement.classList.remove(config.inactiveButtonClass);
   }
 };
 
-const resetValidation = (formEl, inputList) => {
-  inputList.forEach((input) => {
-    hideInputError(formEl, input);
+const disableButton = (cardModalButton) => {
+  cardModalButton.disabled = true;
+  addCardSubmitButton.classList.add("modal__submit-button_disabled");
+};
+
+const resetValidation = (formEl, inputList , config) => {
+    inputList.forEach((inputElement) => {
+    hideInputError(formEl, inputElement ,config);
   });
 };
 
 const setEventListeners = (formEl, config) => {
-  const inputList = Array.from(formEl.querySelectorAll(settings.inputSelector));
-  const buttonElement = formEl.querySelector(settings.submitButtonSelector);
+  const inputList = Array.from(formEl.querySelectorAll(config.inputSelector));
+  const buttonElement = formEl.querySelector(config.submitButtonSelector);
 
   toggleButtonState(inputList, buttonElement, config);
 
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", function () {
-      checkInputValidity(formEl, inputElement);
-      toggleButtonState(inputList, buttonElement);
+      checkInputValidity(formEl, inputElement, config);
+      toggleButtonState(inputList, buttonElement , config);
     });
   });
 };
@@ -72,9 +77,9 @@ const setEventListeners = (formEl, config) => {
 const enableValidation = (config) => {
   const formList = document.querySelectorAll(config.formSelector);
   formList.forEach((formEl) => {
-    setEventListeners(formEl);
+    setEventListeners(formEl, config);
   });
 };
 
-enableValidation(settings);
+enableValidation(config);
 
