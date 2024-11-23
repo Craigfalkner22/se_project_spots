@@ -77,7 +77,7 @@ const closeModalKey = (evt) => {
   if (evt.key === "Escape") {
     const openedModalEl = document.querySelector(".modal_opened");
     closeModal(openedModalEl);
-  };
+  }
 };
 
 const closeModalOverlay = (evt) => {
@@ -138,7 +138,11 @@ function getCardElement(data) {
 profileEditButton.addEventListener("click", () => {
   editInputName.value = profileName.textContent;
   editInputDescription.value = profileDescription.textContent;
-  resetValidation(editProfileModal, [editInputName, editInputDescription], config);
+  resetValidation(
+    editProfileModal,
+    [editInputName, editInputDescription],
+    config
+  );
   openModal(editProfileModal);
 });
 

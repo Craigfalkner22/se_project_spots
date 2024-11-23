@@ -25,7 +25,12 @@ const hideInputError = (formEl, inputElement, config) => {
 
 const checkInputValidity = (formEl, inputElement, config) => {
   if (!inputElement.validity.valid) {
-    showInputError(formEl, inputElement, inputElement.validationMessage, config);
+    showInputError(
+      formEl,
+      inputElement,
+      inputElement.validationMessage,
+      config
+    );
   } else {
     hideInputError(formEl, inputElement, config);
   }
@@ -54,9 +59,9 @@ const disableButton = (cardModalButton) => {
   addCardSubmitButton.classList.add("modal__submit-button_disabled");
 };
 
-const resetValidation = (formEl, inputList , config) => {
-    inputList.forEach((inputElement) => {
-    hideInputError(formEl, inputElement ,config);
+const resetValidation = (formEl, inputList, config) => {
+  inputList.forEach((inputElement) => {
+    hideInputError(formEl, inputElement, config);
   });
 };
 
@@ -69,7 +74,7 @@ const setEventListeners = (formEl, config) => {
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", function () {
       checkInputValidity(formEl, inputElement, config);
-      toggleButtonState(inputList, buttonElement , config);
+      toggleButtonState(inputList, buttonElement, config);
     });
   });
 };
@@ -82,4 +87,3 @@ const enableValidation = (config) => {
 };
 
 enableValidation(config);
-
