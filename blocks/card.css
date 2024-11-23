@@ -39,6 +39,7 @@
   opacity: 100%;
   cursor: pointer;
   transition: ease-in 0.3s;
+
 }
 
 .card__like-button_liked {
@@ -48,6 +49,7 @@
 
 .card__like-button_liked:hover {
   background-image: url(../images/likebuttonhover.svg);
+  background-repeat: no-repeat;
 }
 
 .card__delete-button {

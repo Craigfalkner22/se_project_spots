@@ -90,7 +90,7 @@ function handleProflieFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = editInputName.value;
   profileDescription.textContent = editInputDescription.value;
-  closeModal(evt, editProfileModal);
+  closeModal(editProfileModal);
 }
 
 function handleAddCardSumbit(evt) {
