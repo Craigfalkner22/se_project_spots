@@ -65,7 +65,6 @@ function openModal(modal) {
   modal.classList.add("modal_opened");
   document.addEventListener("keydown", closeModalKey);
   modal.addEventListener("click", closeModalOverlay);
-
 }
 
 function closeModal(modal) {
@@ -144,7 +143,7 @@ profileEditButton.addEventListener("click", () => {
     [editInputName, editInputDescription],
     config
   );
-  enableButton(submitModalButton, config)
+  enableButton(submitModalButton, config);
   openModal(editProfileModal);
 });
 
