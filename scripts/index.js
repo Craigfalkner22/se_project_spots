@@ -65,6 +65,7 @@ function openModal(modal) {
   modal.classList.add("modal_opened");
   document.addEventListener("keydown", closeModalKey);
   modal.addEventListener("click", closeModalOverlay);
+
 }
 
 function closeModal(modal) {
@@ -98,9 +99,9 @@ function handleAddCardSumbit(evt) {
   const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
   const cardElement = getCardElement(inputValues);
   cardList.prepend(cardElement);
-  evt.target.reset();
   closeModal(cardModal);
-  disableButton(addCardSubmitButton);
+  evt.target.reset();
+  disableButton(addCardSubmitButton, config);
 }
 
 function getCardElement(data) {
@@ -143,6 +144,7 @@ profileEditButton.addEventListener("click", () => {
     [editInputName, editInputDescription],
     config
   );
+  enableButton(submitModalButton, config)
   openModal(editProfileModal);
 });
 
